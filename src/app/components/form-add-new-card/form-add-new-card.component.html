@@ -1,0 +1,47 @@
+<div class="form-wrapper">
+
+  <h1 class="form-title">Add new card</h1>
+  <form class="form-card" action="#" [formGroup]="cardForm" (ngSubmit)="submit()">
+
+    <div class="input__group-name">
+      <label class="card-name" for="name-id">Cardholder name
+        <input class="input-name block-input" type="text" name="name" id="name-id" placeholder="Enter full name"
+          formControlName="cardName">
+      </label>
+      <div class="validation">
+        <small *ngIf="cardForm.get('cardName').invalid && cardForm.get('cardName').touched">Поле не может быть
+          пустым</small>
+      </div>
+    </div>
+
+    <div class="input__group-number">
+      <label class="card-number" for="number-id">Card number
+        <input class="input-number block-input" type="number" name="number" id="number-id"
+          placeholder="0000 - 0000 - 0000 - 0000" formControlName="cardNumber">
+      </label>
+    </div>
+
+    <div class="input__group-row">
+      <div class="input__group-date">
+        <label class="card-date" for="date-id">Expiration date
+          <input class="input-date block-input" type="number" name="date" id="date-id" placeholder="MM / YY"
+            formControlName="cardDate">
+        </label>
+      </div>
+
+      <div class="input__group-cvc">
+        <label class="card-cvc" for="cvc-id">CVC
+          <input class="input-cvc block-input" type="number" name="cvc" id="cvc-id" formControlName="cardCVC">
+        </label>
+      </div>
+    </div>
+
+    <div class="input__group-checkbox">
+      <input class="checkbox" type="checkbox" name="checkbox" id="checkbox-id" formControlName="cardCheckbox">
+      <label class="checkbox-text" for="checkbox-id">Use card by default</label>
+      <button class="btn-save" type="submit" [disabled]="cardForm.invalid">Save</button>
+    </div>
+
+  </form>
+
+</div>

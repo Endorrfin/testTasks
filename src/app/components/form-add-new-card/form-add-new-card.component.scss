@@ -14,6 +14,7 @@
   height: 815px;
   background: #fcfcfc;
   border-right: 1px solid #CCCCCC;
+  // position: relative;
 }
 
 .form-title {
@@ -26,6 +27,15 @@
 .form-card {
   margin-left: 50px;
 }
+
+.input__group-name {
+  margin-top: 0.3rem;
+  margin-bottom: .5rem;
+  .validation {
+    color: red;
+  }
+}
+
 
 .input-name, 
 .input-number, 
@@ -68,10 +78,10 @@
 
 
 label {
+  // outline: 1px solid red;
   display: block;
   margin-bottom: 15px;
 }
-
 
 input[type="checkbox"] {
   display: none;
@@ -103,6 +113,10 @@ input[type="checkbox"] {
   content: "x";
 }
 
+.input__group-checkbox input[type='checkbox']:disabled + label::before {
+  content: " ";
+}
+
 
 .btn-save {
   width: 105px;
@@ -113,8 +127,19 @@ input[type="checkbox"] {
   font-size: 14px;
   line-height: 24px;
   text-align: center;
+  transition: opacity 0.2s ease-in;
   background: #0B41BE;
   border-radius: 4px;
+}
+
+input {
+  &.ng-invalid.ng-touched {
+    border-bottom: 2px dashed red;
+  }
+
+  &.ng-valid.ng-touched {
+    border-bottom: 2px solid green;
+  }
 }
 
 
