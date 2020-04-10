@@ -1,14 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { FormService } from "./services/form.service";
 
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormAddNewCardComponent } from './components/form-add-new-card/form-add-new-card.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { FormComponent } from './components/form/form.component';
+import { CardItemComponent } from './components/card-item/card-item.component';
+import { CardListComponent } from './components/card-list/card-list.component';
 
 @NgModule({
-  declarations: [AppComponent, FormAddNewCardComponent],
+  declarations: [AppComponent, CardsComponent, FormComponent, CardItemComponent, CardListComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
-  providers: [],
+  providers: [FormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
