@@ -1,0 +1,135 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: Avenir, sans-serif;
+  color: #000000;
+}
+
+.form-card {
+  //margin-left: 50px;
+}
+
+.form-title {
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: 1px;
+}
+
+.input__group-name {
+  margin-top: 0.3rem;
+  margin-bottom: .5rem;
+  .validation {
+    color: red;
+  }
+}
+
+
+.input-name,
+.input-number,
+.input-date,
+.input-cvc {
+  height: 46px;
+  width: 525px;
+  background: #fcfcfc;
+  border: 1px solid #DBDBDB;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  margin-top: 5px;
+}
+
+.input-date,
+.input-cvc {
+  height: 46px;
+  width: 245px;
+}
+
+
+.card-name,
+.card-number,
+.card-date,
+.card-cvc {
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.1px;
+}
+
+.input__group-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.input__group-date {
+  margin-right: 30px;
+}
+
+
+label {
+  // outline: 1px solid red;
+  display: block;
+  margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-text {
+  cursor: default;
+  line-height: 20px;
+  padding: 10px 0;
+  vertical-align: middle;
+}
+
+.checkbox-text:before {
+  content: " ";
+  color: #000;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  text-align: center;
+  text-indent: 0px;
+  width: 20px;
+  height: 20px;
+  background: #fcfcfc;
+  border: 1px solid #DBDBDB;
+  vertical-align: middle;
+}
+
+.input__group-checkbox input[type='checkbox']:checked + label::before {
+  content: "x";
+}
+
+.input__group-checkbox input[type='checkbox']:disabled + label::before {
+  content: " ";
+}
+
+
+.btn-save {
+  width: 105px;
+  height: 40px;
+  display: block;
+  color: #FFFFFF;
+  padding: 8px;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  transition: opacity 0.2s ease-in;
+  background: #0B41BE;
+  border-radius: 4px;
+  border: none;
+}
+
+input {
+  &.ng-invalid.ng-touched {
+    border-bottom: .5px solid red;
+  }
+
+  &.ng-valid.ng-touched {
+    border-bottom: .5px solid green;
+  }
+}

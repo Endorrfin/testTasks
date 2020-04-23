@@ -1,0 +1,47 @@
+<form class="form-card" [formGroup]="cardForm" (ngSubmit)="addCard()">
+  <h2 class="form-title">Add new card</h2>
+
+  <div class="input__group-name">
+    <label class="card-name" for="name-id">Cardholder name
+      <input class="input-name block-input" id="name-id" placeholder="Enter full name" formControlName="cardName"
+        name="cardName">
+    </label>
+    <div class="validation">
+      <small *ngIf="cardForm.get('cardName').invalid && cardForm.get('cardName').touched">The field cannot be
+        empty</small>
+    </div>
+  </div>
+
+  <!--  <div>Form Contents: {{cardForm.value | json}}</div>-->
+  <!--  <div>Form is valid: {{cardForm.valid}}</div>-->
+  <!--  <div>Errors around name: {{cardForm.controls.cardName.errors | json}}</div>-->
+
+  <div class="input__group-number">
+    <label class="card-number" for="number-id">Card number
+      <input class="input-number block-input" id="number-id" placeholder="0000 - 0000 - 0000 - 0000"
+        formControlName="cardNumber" name="cardNumber">
+    </label>
+  </div>
+
+  <div class="input__group-row">
+    <div class="input__group-date">
+      <label class="card-date" for="date-id">Expiration date
+        <input class="input-date block-input" id="date-id" placeholder="MM / YY" formControlName="cardDate"
+          name="cardDate">
+      </label>
+    </div>
+
+    <div class="input__group-cvc">
+      <label class="card-cvc" for="cvc-id">CVC
+        <input class="input-cvc block-input" id="cvc-id" formControlName="cardCVC" name="cardCVC">
+      </label>
+    </div>
+  </div>
+
+  <div class="input__group-checkbox">
+    <input class="checkbox" type="checkbox" id="checkbox-id" formControlName="cardDefault">
+    <label class="checkbox-text" for="checkbox-id">Use card by default</label>
+    <button class="btn-save" type="submit" [disabled]="cardForm.invalid" name="cardDefault">Save</button>
+  </div>
+
+</form>
